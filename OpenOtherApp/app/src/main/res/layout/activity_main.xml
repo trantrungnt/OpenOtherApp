@@ -15,4 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Open" />
+    <Button
+        android:id="@+id/btnOpenSecond"
+        android:layout_below="@id/btnOpenFirst"
+        android:text="@string/btnOpenSecond_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 </RelativeLayout>

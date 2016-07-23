@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">OpenOtherApp</string>
+    <string name="btnOpenSecond_text">Open Activity use: Pending Intent</string>
 </resources>
