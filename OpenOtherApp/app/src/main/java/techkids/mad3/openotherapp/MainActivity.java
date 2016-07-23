@@ -1,5 +1,6 @@
 package techkids.mad3.openotherapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mButtonOpenFirst;
+    private static final String PACKAGE_NAME = "techkids.mad3.finalproject";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +23,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void openOtherApplication() {
-
+        Intent intent = this.getPackageManager().getLaunchIntentForPackage(PACKAGE_NAME);
+        startActivity(intent);
     }
 
     @Override
@@ -30,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (id) {
             case R.id.btnOpenFirst:
-                onBackPressed();
+                openOtherApplication();
                 break;
         }
     }
