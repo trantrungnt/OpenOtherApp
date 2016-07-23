@@ -10,7 +10,7 @@
     tools:context="techkids.mad3.openotherapp.MainActivity">
 
     <Button
-        android:id ="@+id/btnOpen"
+        android:id ="@+id/btnOpenFirst"
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
