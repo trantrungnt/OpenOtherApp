@@ -14,6 +14,8 @@ public class MyBroadCastReceiver extends BroadcastReceiver {
         if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
             Log.d("TAG", "Ban vua khoi dong lai may");
         }
-
+        if (Intent.ACTION_SCREEN_ON.equals(intent.getAction())){
+            Log.d("TAG", "SCREEN ON");
+        }
     }
 }

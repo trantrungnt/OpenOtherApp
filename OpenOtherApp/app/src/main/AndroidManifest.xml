@@ -17,7 +17,7 @@
         </activity>
         <activity android:name=".ActivityFirst">
         </activity>
-        <receiver android:name=".MyBroadCastReceiver">
+        <receiver android:name=".MyBroadCastReceiver" android:enabled="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"></action>
             </intent-filter>

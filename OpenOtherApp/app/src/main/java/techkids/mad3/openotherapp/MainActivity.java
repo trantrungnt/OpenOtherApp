@@ -3,6 +3,7 @@ package techkids.mad3.openotherapp;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mButtonOpenFirst, mButtonOpenSecond;
     private static final String PACKAGE_NAME = "techkids.mad3.finalproject";
     private Context mContext;
+    private MyBroadCastReceiver mMyBroadCastReceiver = new MyBroadCastReceiver();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mButtonOpenFirst.setOnClickListener(this);
         mButtonOpenSecond = (Button) this.findViewById(R.id.btnOpenSecond);
         mButtonOpenSecond.setOnClickListener(this);
+
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(Intent.ACTION_SCREEN_ON);
+        registerReceiver(mMyBroadCastReceiver, intentFilter);
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mMyBroadCastReceiver != null) {
+            unregisterReceiver(mMyBroadCastReceiver);
+        }
+        super.onDestroy();
     }
 
     private void openOtherApplication() {
